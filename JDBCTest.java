@@ -1,3 +1,4 @@
+//the file was edited!
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -18,39 +19,39 @@ public class JDBCTest extends Thread{
 		     		e.printStackTrace();
 		     		}
 		     	try {
-					// ¼ÓÔØÇý¶¯³ÌÐò
+					// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 					Class.forName("com.mysql.jdbc.Driver");
-					// URLÖ¸ÏòÒª·ÃÎÊµÄÊý¾Ý¿âÃûtest127.0.0.1
+					// URLÖ¸ï¿½ï¿½Òªï¿½ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½test127.0.0.1
 					String url = "jdbc:mysql://198.71.90.118:3306/test";//192.168.137.1
-					// MySQLÅäÖÃÊ±µÄÓÃ»§Ãû
+					// MySQLï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½
 					String user = "sysuer";
-					// MySQLÅäÖÃÊ±µÄÃÜÂë
+					// MySQLï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 					String password = "sysu2o11";
-					// Á¬ÐøÊý¾Ý¿â
+					// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý¿ï¿½
 					Connection connection = (Connection)DriverManager.getConnection(url, user, password);
 					if(!connection.isClosed())
 						System.out.println("Succeeded connecting to the Database!");
-					// statementÓÃÀ´Ö´ÐÐSQLÓï¾ä
+					// statementï¿½ï¿½ï¿½ï¿½Ö´ï¿½ï¿½SQLï¿½ï¿½ï¿½ï¿½
 					Statement statement = (Statement)connection.createStatement();
 					
-					// ÒªÖ´ÐÐµÄSQLÓï¾ä
+					// ÒªÖ´ï¿½Ðµï¿½SQLï¿½ï¿½ï¿½ï¿½
 					String sql = "select * from student";
-					// Ö´ÐÐSQLÓï¾ä²¢·µ»Ø½á¹û¼¯
+					// Ö´ï¿½ï¿½SQLï¿½ï¿½ï¿½ä²¢ï¿½ï¿½ï¿½Ø½ï¿½ï¿½ï¿½ï¿½ï¿½
 					ResultSet rs = statement.executeQuery(sql);
 					
-					System.out.println(" id" + "\t" + " ÐÕÃû");
+					System.out.println(" id" + "\t" + " ï¿½ï¿½ï¿½ï¿½");
 					String name = null;
 					while(rs.next()) {
-						// Ñ¡ÔñsnameÕâÁÐÊý¾Ý
+						// Ñ¡ï¿½ï¿½snameï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 						name = rs.getString("sname");
 						str+=name;
-						// Êä³ö½á¹û
+						// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 						System.out.println(rs.getString("sno") + "\t" + name);
 						str+=rs.getString("sname");
 					}
-					// ¹Ø±Õ½á¹û¼¯
+					// ï¿½Ø±Õ½ï¿½ï¿½ï¿½ï¿½ï¿½
 					rs.close();
-					// ¹Ø±ÕÁ¬½Ó
+					// ï¿½Ø±ï¿½ï¿½ï¿½ï¿½ï¿½
 					connection.close();
 		     		} catch(ClassNotFoundException e) {
 		     			System.out.println("Sorry,can`t find the Driver!");
